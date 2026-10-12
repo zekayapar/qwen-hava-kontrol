@@ -1,0 +1,23 @@
+{
+  "model": "Qwen/Qwen3.8-27B",
+  "messages": [
+    {
+      "role": "system",
+      "content": "YalnızJSON metin yamaları üret, ifadelerdengeçerliJSyap."
+    },
+    {
+      "role": "user",
+      "content": "Son yaman sözdizimini bozdu: old if(g.over) satırında açılansüslüparantezyoktu fakat new içine ekledin ve aşağıdaki mevcut { kaldı; if..else bozuldu. stage tanımlıdeğil.document.querySelector('.stage') kullan. Aşağıdaki2tamline içinJSONreplacements üret. Newsatır: onPointerCancel({pointerId:drag?.pointerId}); speed=1; $('speedSelect').value='1'; document.querySelector('.stage').classList.add('game-active'); sonra YENİSATIR aynıindent if (g.over) ifadesi, süslüparantezsiz; mevcut sonraki { olduğu gibi kalır. Cleanup koşuldanönceherload çalışmalı. YalnızJSON{\"replacements\":[{\"old\":\"exactline\",\"new\":\"...\"},...]}.\n[\"    if (g.over) { onPointerCancel({pointerId:drag?.pointerId}); speed=1; $('speedSelect').value='1'; stage.classList.add('game-active'); } {\", \"      if (g.over) { onPointerCancel({pointerId:drag?.pointerId}); speed=1; $('speedSelect').value='1'; stage.classList.add('game-active'); } {\"]"
+    }
+  ],
+  "max_tokens": 1024,
+  "temperature": 0.2,
+  "seed": 42,
+  "stream": true,
+  "stream_options": {
+    "include_usage": true
+  },
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  }
+}

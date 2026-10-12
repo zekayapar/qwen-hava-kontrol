@@ -1,0 +1,7 @@
+{
+  "http_status": 400,
+  "usage": null,
+  "elapsed_s": null,
+  "response_body_not_recorded": true,
+  "explanation": "Combined full engine/controller/layout context and requested output exceeded context budget; inference from request size, original error body was not captured."
+}

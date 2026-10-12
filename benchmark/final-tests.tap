@@ -1,0 +1,280 @@
+TAP version 13
+# Subtest: same seed gives reproducible state
+ok 1 - same seed gives reproducible state
+  ---
+  duration_ms: 1.351151
+  type: 'test'
+  ...
+# Subtest: route rejects invalid points without changing state
+ok 2 - route rejects invalid points without changing state
+  ---
+  duration_ms: 0.346627
+  type: 'test'
+  ...
+# Subtest: route clamps coordinates and copies input
+ok 3 - route clamps coordinates and copies input
+  ---
+  duration_ms: 0.147039
+  type: 'test'
+  ...
+# Subtest: paused tick freezes all state
+ok 4 - paused tick freezes all state
+  ---
+  duration_ms: 0.476614
+  type: 'test'
+  ...
+# Subtest: ended tick freezes all state
+ok 5 - ended tick freezes all state
+  ---
+  duration_ms: 0.138533
+  type: 'test'
+  ...
+# Subtest: invalid dt does not mutate
+ok 6 - invalid dt does not mutate
+  ---
+  duration_ms: 0.128984
+  type: 'test'
+  ...
+# Subtest: tick caps large dt to 0.1 seconds
+ok 7 - tick caps large dt to 0.1 seconds
+  ---
+  duration_ms: 0.167597
+  type: 'test'
+  ...
+# Subtest: fuel drains only while playing
+ok 8 - fuel drains only while playing
+  ---
+  duration_ms: 0.169672
+  type: 'test'
+  ...
+# Subtest: zero fuel loses plane exactly once
+ok 9 - zero fuel loses plane exactly once
+  ---
+  duration_ms: 0.314696
+  type: 'test'
+  ...
+# Subtest: waypoint flight moves and consumes reached waypoint
+ok 10 - waypoint flight moves and consumes reached waypoint
+  ---
+  duration_ms: 0.312662
+  type: 'test'
+  ...
+# Subtest: close pair emits separation warning
+ok 11 - close pair emits separation warning
+  ---
+  duration_ms: 0.350704
+  type: 'test'
+  ...
+# Subtest: collision removes both and records one incident
+ok 12 - collision removes both and records one incident
+  ---
+  duration_ms: 0.186954
+  type: 'test'
+  ...
+# Subtest: light aligned to runway can land and occupy it
+ok 13 - light aligned to runway can land and occupy it
+  ---
+  duration_ms: 0.691441
+  type: 'test'
+  ...
+# Subtest: busy runway cannot land another plane
+ok 14 - busy runway cannot land another plane
+  ---
+  duration_ms: 0.146147
+  type: 'test'
+  ...
+# Subtest: closed runway cannot land
+ok 15 - closed runway cannot land
+  ---
+  duration_ms: 0.118164
+  type: 'test'
+  ...
+# Subtest: wrong heading cannot land
+ok 16 - wrong heading cannot land
+  ---
+  duration_ms: 0.092015
+  type: 'test'
+  ...
+# Subtest: runway timer releases occupancy
+ok 17 - runway timer releases occupancy
+  ---
+  duration_ms: 0.099408
+  type: 'test'
+  ...
+# Subtest: save/load faithfully preserves routes, PRNG, timers
+ok 18 - save/load faithfully preserves routes, PRNG, timers
+  ---
+  duration_ms: 0.437259
+  type: 'test'
+  ...
+# Subtest: restored simulation continues identically
+ok 19 - restored simulation continues identically
+  ---
+  duration_ms: 0.146618
+  type: 'test'
+  ...
+# Subtest: corrupt save rejected
+ok 20 - corrupt save rejected
+  ---
+  duration_ms: 0.188748
+  type: 'test'
+  ...
+# Subtest: unsupported save version rejected
+ok 21 - unsupported save version rejected
+  ---
+  duration_ms: 0.122462
+  type: 'test'
+  ...
+# Subtest: three incidents end game
+ok 22 - three incidents end game
+  ---
+  duration_ms: 0.100971
+  type: 'test'
+  ...
+# Subtest: heavy and light have different speeds
+ok 23 - heavy and light have different speeds
+  ---
+  duration_ms: 0.104137
+  type: 'test'
+  ...
+# Subtest: unknown plane and empty route are handled
+ok 24 - unknown plane and empty route are handled
+  ---
+  duration_ms: 0.075463
+  type: 'test'
+  ...
+# Subtest: spawn advances persistent RNG state
+ok 25 - spawn advances persistent RNG state
+  ---
+  duration_ms: 1.220703
+  type: 'test'
+  ...
+# Subtest: two separate collision pairs count two incidents and four losses
+ok 26 - two separate collision pairs count two incidents and four losses
+  ---
+  duration_ms: 0.370472
+  type: 'test'
+  ...
+# Subtest: three colliding aircraft count each lost aircraft once
+ok 27 - three colliding aircraft count each lost aircraft once
+  ---
+  duration_ms: 0.16881
+  type: 'test'
+  ...
+# Subtest: save rejects negative runway busy
+ok 28 - save rejects negative runway busy
+  ---
+  duration_ms: 0.557156
+  type: 'test'
+  ...
+# Subtest: save rejects unknown difficulty
+ok 29 - save rejects unknown difficulty
+  ---
+  duration_ms: 0.163009
+  type: 'test'
+  ...
+# Subtest: save rejects duplicate aircraft ids
+ok 30 - save rejects duplicate aircraft ids
+  ---
+  duration_ms: 0.230146
+  type: 'test'
+  ...
+# Subtest: save rejects unbounded plane arrays
+ok 31 - save rejects unbounded plane arrays
+  ---
+  duration_ms: 1.223659
+  type: 'test'
+  ...
+# Subtest: save rejects unsafe prototype keys
+ok 32 - save rejects unsafe prototype keys
+  ---
+  duration_ms: 0.162308
+  type: 'test'
+  ...
+# Subtest: expired storm state remains saveable
+ok 33 - expired storm state remains saveable
+  ---
+  duration_ms: 0.515377
+  type: 'test'
+  ...
+# Subtest: start begins running
+ok 34 - start begins running
+  ---
+  duration_ms: 2.908012
+  type: 'test'
+  ...
+# Subtest: Canvas logical scaling matches actual pixel size
+ok 35 - Canvas logical scaling matches actual pixel size
+  ---
+  duration_ms: 1.758102
+  type: 'test'
+  ...
+# Subtest: P autorepeat does not toggle
+ok 36 - P autorepeat does not toggle
+  ---
+  duration_ms: 0.936966
+  type: 'test'
+  ...
+# Subtest: button Enter remains native
+ok 37 - button Enter remains native
+  ---
+  duration_ms: 1.248667
+  type: 'test'
+  ...
+# Subtest: busy runway state is displayed
+ok 38 - busy runway state is displayed
+  ---
+  duration_ms: 0.928079
+  type: 'test'
+  ...
+# Subtest: fuel displayed in seconds
+ok 39 - fuel displayed in seconds
+  ---
+  duration_ms: 1.187771
+  type: 'test'
+  ...
+# Subtest: approach does not reserve busy runway
+ok 40 - approach does not reserve busy runway
+  ---
+  duration_ms: 1.108962
+  type: 'test'
+  ...
+# Subtest: load resets speed and pauses
+ok 41 - load resets speed and pauses
+  ---
+  duration_ms: 1.853704
+  type: 'test'
+  ...
+# Subtest: ended save shows results rather than playable state
+ok 42 - ended save shows results rather than playable state
+  ---
+  duration_ms: 1.059368
+  type: 'test'
+  ...
+# Subtest: focus loss clears pointer route capture
+ok 43 - focus loss clears pointer route capture
+  ---
+  duration_ms: 2.649572
+  type: 'test'
+  ...
+# Subtest: speed choice persists across animation frames
+ok 44 - speed choice persists across animation frames
+  ---
+  duration_ms: 2.091765
+  type: 'test'
+  ...
+# Subtest: normal animation frame does not cancel route drawing
+ok 45 - normal animation frame does not cancel route drawing
+  ---
+  duration_ms: 2.33164
+  type: 'test'
+  ...
+1..45
+# tests 45
+# suites 0
+# pass 45
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 79.029104

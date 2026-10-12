@@ -1,0 +1,25 @@
+{
+  "round": "03-engine-review",
+  "started_at_utc": "2026-10-12T22:47:05.884326+00:00",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 5298,
+    "total_tokens": 11234,
+    "completion_tokens": 5936,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "ttft_ms": 1805.0028229999953,
+  "total_s": 34.24141826699997,
+  "generation_window_s": 32.43629648800015,
+  "e2e_tokens_per_s": 173.3573052878127,
+  "decode_tokens_per_s": 182.97403349348656,
+  "response_sha256": "fa07f63504becbba7bd447444f32d568e4aee322f3c47c317a6f496c23afb604",
+  "temperature": 0.2,
+  "seed": 42,
+  "thinking": false,
+  "max_tokens": 8192,
+  "endpoint_scope": "localhost vLLM, production TP2/MTP3; no gateway/HTTPS",
+  "content_chunks": 1508
+}

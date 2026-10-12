@@ -1,0 +1,268 @@
+TAP version 13
+# Subtest: start begins running
+not ok 1 - start begins running
+  ---
+  duration_ms: 4.169935
+  type: 'test'
+  location: '/home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:11:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    true !== false
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: false
+  actual: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:11:88)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: Canvas logical scaling matches actual pixel size
+not ok 2 - Canvas logical scaling matches actual pixel size
+  ---
+  duration_ms: 1.638035
+  type: 'test'
+  location: '/home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:12:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    2 !== 1.4
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1.4
+  actual: 2
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:12:130)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: P autorepeat does not toggle
+not ok 3 - P autorepeat does not toggle
+  ---
+  duration_ms: 1.033419
+  type: 'test'
+  location: '/home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:13:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    false !== true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:13:210)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: button Enter remains native
+not ok 4 - button Enter remains native
+  ---
+  duration_ms: 1.50864
+  type: 'test'
+  location: '/home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:14:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    true !== false
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: false
+  actual: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:14:229)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: busy runway state is displayed
+not ok 5 - busy runway state is displayed
+  ---
+  duration_ms: 0.992922
+  type: 'test'
+  location: '/home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:15:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /MEŞGUL/. Input:
+    
+    'Pist 1 · AÇIK · Hafif/Orta Pist 2 · AÇIK · Orta/Ağır'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Pist 1 · AÇIK · Hafif/Orta Pist 2 · AÇIK · Orta/Ağır'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:15:147)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: fuel displayed in seconds
+not ok 6 - fuel displayed in seconds
+  ---
+  duration_ms: 1.08679
+  type: 'test'
+  location: '/home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:16:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /120\s*(sn|saniye)/. Input:
+    
+    'Çağrı:  AF1 Tür:  Hafif Hız:  60 Yakıt:  120% Rota:  0 nokta'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Çağrı:  AF1 Tür:  Hafif Hız:  60 Yakıt:  120% Rota:  0 nokta'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:16:163)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: approach does not reserve busy runway
+not ok 7 - approach does not reserve busy runway
+  ---
+  duration_ms: 1.351892
+  type: 'test'
+  location: '/home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:17:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    3 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 3
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:17:229)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: load resets speed and pauses
+not ok 8 - load resets speed and pauses
+  ---
+  duration_ms: 1.400996
+  type: 'test'
+  location: '/home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:18:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    4 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 4
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:18:201)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: ended save shows results rather than playable state
+not ok 9 - ended save shows results rather than playable state
+  ---
+  duration_ms: 1.558896
+  type: 'test'
+  location: '/home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:19:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    true !== false
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: false
+  actual: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:19:163)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: focus loss clears pointer route capture
+not ok 10 - focus loss clears pointer route capture
+  ---
+  duration_ms: 4.379662
+  type: 'test'
+  location: '/home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:20:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(h.api.get().drag)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: ~
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:20:202)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 0
+# fail 10
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 76.242401

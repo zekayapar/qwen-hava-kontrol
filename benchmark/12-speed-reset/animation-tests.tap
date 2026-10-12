@@ -1,0 +1,122 @@
+TAP version 13
+# Subtest: start begins running
+ok 1 - start begins running
+  ---
+  duration_ms: 3.787309
+  type: 'test'
+  ...
+# Subtest: Canvas logical scaling matches actual pixel size
+ok 2 - Canvas logical scaling matches actual pixel size
+  ---
+  duration_ms: 2.269752
+  type: 'test'
+  ...
+# Subtest: P autorepeat does not toggle
+ok 3 - P autorepeat does not toggle
+  ---
+  duration_ms: 1.30867
+  type: 'test'
+  ...
+# Subtest: button Enter remains native
+ok 4 - button Enter remains native
+  ---
+  duration_ms: 1.716052
+  type: 'test'
+  ...
+# Subtest: busy runway state is displayed
+ok 5 - busy runway state is displayed
+  ---
+  duration_ms: 1.330021
+  type: 'test'
+  ...
+# Subtest: fuel displayed in seconds
+ok 6 - fuel displayed in seconds
+  ---
+  duration_ms: 1.376539
+  type: 'test'
+  ...
+# Subtest: approach does not reserve busy runway
+ok 7 - approach does not reserve busy runway
+  ---
+  duration_ms: 1.174436
+  type: 'test'
+  ...
+# Subtest: load resets speed and pauses
+ok 8 - load resets speed and pauses
+  ---
+  duration_ms: 1.758743
+  type: 'test'
+  ...
+# Subtest: ended save shows results rather than playable state
+ok 9 - ended save shows results rather than playable state
+  ---
+  duration_ms: 1.060069
+  type: 'test'
+  ...
+# Subtest: focus loss clears pointer route capture
+ok 10 - focus loss clears pointer route capture
+  ---
+  duration_ms: 1.652943
+  type: 'test'
+  ...
+# Subtest: speed choice persists across animation frames
+not ok 11 - speed choice persists across animation frames
+  ---
+  duration_ms: 1.996695
+  type: 'test'
+  location: '/home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:22:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    1 !== 4
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 4
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:22:198)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: normal animation frame does not cancel route drawing
+not ok 12 - normal animation frame does not cancel route drawing
+  ---
+  duration_ms: 5.215846
+  type: 'test'
+  location: '/home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:23:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(h.api.get().drag)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: ~
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///home/zeka/ai/projects/qwen-hava-kontrol/tools/ui.test.mjs:23:231)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 10
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 87.544784

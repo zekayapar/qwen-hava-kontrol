@@ -1,0 +1,23 @@
+{
+  "model": "Qwen/Qwen3.8-27B",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Verilen2satırbloğun arasına tekkoşulsuzsatır ekleyen JSONyama üret."
+    },
+    {
+      "role": "user",
+      "content": "Son41numaralıtestfailed: g.over FALSE normal kayıt yüklemesinde speed4kalıyor. Cleanup sadeceif(g.over) İÇİNDE olmamalı. Aşağıdakiheroldtammetinde uiAcc=0; satırıile if(g.over){ arasına,ifdenÖNCE koşulsuz \"onPointerCancel({pointerId:drag?.pointerId}); speed = 1; $('speedSelect').value = '1'; document.querySelector('.stage').classList.add('game-active');\" satırını ekle. olddakiif(g.over) { satırıbraceDÂHİLkorunmalı. İçblokcleanup tekrarı kalsa sorun yok; normalelse de ilkcleanupçalışacak. YalnızJSON {\"replacements\":[{\"old\":\"exact\",\"new\":\"...\"},...]} üret.\n[\"    uiAcc = 0;\\n    if (g.over) {\", \"      uiAcc = 0;\\n      if (g.over) {\", \"    if (uiAcc >= 0.25) { uiAcc = 0; updateUI(); }\\n    if (g.over) { playing = false; showEnd(); }\"]"
+    }
+  ],
+  "max_tokens": 1024,
+  "temperature": 0.2,
+  "seed": 42,
+  "stream": true,
+  "stream_options": {
+    "include_usage": true
+  },
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  }
+}

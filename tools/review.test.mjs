@@ -7,3 +7,4 @@ test('save rejects unknown difficulty',()=>{const g=createGame();g.difficulty='i
 test('save rejects duplicate aircraft ids',()=>{const g=createGame();addPlane(g,{x:100,y:100});addPlane(g,{x:500,y:100});g.planes[1].id=g.planes[0].id;assert.throws(()=>deserialize(serialize(g)))});
 test('save rejects unbounded plane arrays',()=>{const g=createGame();for(let i=0;i<201;i++)addPlane(g,{x:100,y:100});assert.throws(()=>deserialize(serialize(g)))});
 test('save rejects unsafe prototype keys',()=>{const g=createGame();const text=serialize(g).replace('"version":1','"__proto__":{},"version":1');assert.throws(()=>deserialize(text))});
+test('expired storm state remains saveable',()=>{const g=createGame();g.time=61;g.weather.storm=true;g.weather.stormTimer=.001;tick(g,.1);assert.doesNotThrow(()=>deserialize(serialize(g)))});

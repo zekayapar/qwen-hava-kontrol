@@ -1,0 +1,25 @@
+{
+  "round": "13-animation-fix",
+  "started_at_utc": "2026-10-12T22:55:03.487846+00:00",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 222,
+    "total_tokens": 358,
+    "completion_tokens": 136,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "ttft_ms": 161.09673699975247,
+  "total_s": 0.9122984309997264,
+  "generation_window_s": 0.7297977270000047,
+  "e2e_tokens_per_s": 149.0740259752138,
+  "decode_tokens_per_s": 184.98276303894153,
+  "response_sha256": "937b73e47585f9f0e06a641c82fbed94b005fa02e92092ecbd6a2304ab56a030",
+  "temperature": 0.2,
+  "seed": 42,
+  "thinking": false,
+  "max_tokens": 1024,
+  "endpoint_scope": "localhost vLLM, production TP2/MTP3; no gateway/HTTPS",
+  "content_chunks": 35
+}

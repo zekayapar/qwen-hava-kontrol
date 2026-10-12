@@ -1,0 +1,19 @@
+{
+  "first_game": {
+    "prompt_tokens": 8723,
+    "completion_tokens": 17856,
+    "total_tokens": 26579,
+    "total_model_http_s": 108.59729259899996
+  },
+  "air_traffic": {
+    "prompt_tokens": 39399,
+    "completion_tokens": 38623,
+    "total_tokens": 78022,
+    "total_model_http_s": 231.21739172099888
+  },
+  "calls": [
+    4,
+    12
+  ],
+  "scope": "Different projects and prompts; development trace comparison, not controlled speed or quality benchmark."
+}

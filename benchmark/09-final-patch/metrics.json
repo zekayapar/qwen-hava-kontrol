@@ -1,0 +1,25 @@
+{
+  "round": "09-final-patch",
+  "started_at_utc": "2026-10-12T22:52:09.550345+00:00",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 265,
+    "total_tokens": 561,
+    "completion_tokens": 296,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "ttft_ms": 163.5539950002567,
+  "total_s": 1.7731406720004088,
+  "generation_window_s": 1.6094576519999464,
+  "e2e_tokens_per_s": 166.93542970060062,
+  "decode_tokens_per_s": 183.29155764578627,
+  "response_sha256": "5fcda760d2aceb3ece3b20e9982e512b570df2891e2aa0a784bf7b7271f9c173",
+  "temperature": 0.2,
+  "seed": 42,
+  "thinking": false,
+  "max_tokens": 2048,
+  "endpoint_scope": "localhost vLLM, production TP2/MTP3; no gateway/HTTPS",
+  "content_chunks": 76
+}

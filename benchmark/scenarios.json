@@ -1,0 +1,50 @@
+{
+  "kind": "Node simulation smoke; helper routes; simulated time is not wall-clock or GPU stability test",
+  "results": [
+    {
+      "seed": 1,
+      "time": 66.20000000000051,
+      "landed": 7,
+      "lost": 6,
+      "incidents": 3,
+      "over": true,
+      "checks": 67
+    },
+    {
+      "seed": 42,
+      "time": 81.29999999999966,
+      "landed": 10,
+      "lost": 6,
+      "incidents": 3,
+      "over": true,
+      "checks": 82
+    },
+    {
+      "seed": 77,
+      "time": 87.5999999999993,
+      "landed": 13,
+      "lost": 6,
+      "incidents": 3,
+      "over": true,
+      "checks": 88
+    },
+    {
+      "seed": 123,
+      "time": 80.5999999999997,
+      "landed": 10,
+      "lost": 6,
+      "incidents": 3,
+      "over": true,
+      "checks": 81
+    },
+    {
+      "seed": 999,
+      "time": 100.79999999999855,
+      "landed": 14,
+      "lost": 6,
+      "incidents": 3,
+      "over": true,
+      "checks": 101
+    }
+  ]
+}

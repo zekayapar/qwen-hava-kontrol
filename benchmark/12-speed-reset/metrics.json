@@ -1,0 +1,25 @@
+{
+  "round": "12-speed-reset",
+  "started_at_utc": "2026-10-12T22:53:39.908009+00:00",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 285,
+    "total_tokens": 620,
+    "completion_tokens": 335,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "ttft_ms": 154.24906499993085,
+  "total_s": 1.9553597479998643,
+  "generation_window_s": 1.8009776010003407,
+  "e2e_tokens_per_s": 171.32397265652583,
+  "decode_tokens_per_s": 185.45483287214788,
+  "response_sha256": "74cee2e9a91d1e2b211acbfa5385372795502c2db0f84e5b9de315dfd0f0b635",
+  "temperature": 0.2,
+  "seed": 42,
+  "thinking": false,
+  "max_tokens": 1024,
+  "endpoint_scope": "localhost vLLM, production TP2/MTP3; no gateway/HTTPS",
+  "content_chunks": 85
+}

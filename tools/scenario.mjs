@@ -1,0 +1,4 @@
+import{createGame,setRoute,tick,serialize,deserialize}from'../engine.js';import assert from'node:assert/strict';import fs from'node:fs';
+const results=[];
+for(const seed of[1,42,77,123,999]){const g=createGame(seed,'zor');let checks=0;for(let i=0;i<6000&&!g.over;i++){for(const p of g.planes){if(!p.route.length){const r=g.runways.find(r=>r.accepts.includes(p.type)&&!r.closed&&r.busy===0);if(r){const x=Math.cos(r.heading),y=Math.sin(r.heading);setRoute(g,p.id,[{x:r.x-60*x,y:r.y-60*y},{x:r.x,y:r.y}])}}}tick(g,.1);if(i%10===0){assert.deepEqual(deserialize(serialize(g)),g);checks++}}results.push({seed,time:g.time,landed:g.landed,lost:g.lost,incidents:g.incidents,over:g.over,checks})}
+fs.writeFileSync(new URL('../benchmark/scenarios.json',import.meta.url),JSON.stringify({kind:'Node simulation smoke; helper routes; simulated time is not wall-clock or GPU stability test',results},null,2));console.log(JSON.stringify(results));

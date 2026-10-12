@@ -1,0 +1,202 @@
+TAP version 13
+# Subtest: same seed gives reproducible state
+ok 1 - same seed gives reproducible state
+  ---
+  duration_ms: 1.802418
+  type: 'test'
+  ...
+# Subtest: route rejects invalid points without changing state
+ok 2 - route rejects invalid points without changing state
+  ---
+  duration_ms: 0.478047
+  type: 'test'
+  ...
+# Subtest: route clamps coordinates and copies input
+ok 3 - route clamps coordinates and copies input
+  ---
+  duration_ms: 0.211581
+  type: 'test'
+  ...
+# Subtest: paused tick freezes all state
+ok 4 - paused tick freezes all state
+  ---
+  duration_ms: 0.668116
+  type: 'test'
+  ...
+# Subtest: ended tick freezes all state
+ok 5 - ended tick freezes all state
+  ---
+  duration_ms: 0.189189
+  type: 'test'
+  ...
+# Subtest: invalid dt does not mutate
+ok 6 - invalid dt does not mutate
+  ---
+  duration_ms: 0.1847
+  type: 'test'
+  ...
+# Subtest: tick caps large dt to 0.1 seconds
+ok 7 - tick caps large dt to 0.1 seconds
+  ---
+  duration_ms: 0.244994
+  type: 'test'
+  ...
+# Subtest: fuel drains only while playing
+ok 8 - fuel drains only while playing
+  ---
+  duration_ms: 0.319917
+  type: 'test'
+  ...
+# Subtest: zero fuel loses plane exactly once
+ok 9 - zero fuel loses plane exactly once
+  ---
+  duration_ms: 0.59588
+  type: 'test'
+  ...
+# Subtest: waypoint flight moves and consumes reached waypoint
+ok 10 - waypoint flight moves and consumes reached waypoint
+  ---
+  duration_ms: 0.566294
+  type: 'test'
+  ...
+# Subtest: close pair emits separation warning
+ok 11 - close pair emits separation warning
+  ---
+  duration_ms: 0.695308
+  type: 'test'
+  ...
+# Subtest: collision removes both and records one incident
+ok 12 - collision removes both and records one incident
+  ---
+  duration_ms: 0.285221
+  type: 'test'
+  ...
+# Subtest: light aligned to runway can land and occupy it
+ok 13 - light aligned to runway can land and occupy it
+  ---
+  duration_ms: 0.275222
+  type: 'test'
+  ...
+# Subtest: busy runway cannot land another plane
+ok 14 - busy runway cannot land another plane
+  ---
+  duration_ms: 0.171235
+  type: 'test'
+  ...
+# Subtest: closed runway cannot land
+ok 15 - closed runway cannot land
+  ---
+  duration_ms: 1.140502
+  type: 'test'
+  ...
+# Subtest: wrong heading cannot land
+ok 16 - wrong heading cannot land
+  ---
+  duration_ms: 0.133053
+  type: 'test'
+  ...
+# Subtest: runway timer releases occupancy
+ok 17 - runway timer releases occupancy
+  ---
+  duration_ms: 0.102033
+  type: 'test'
+  ...
+# Subtest: save/load faithfully preserves routes, PRNG, timers
+ok 18 - save/load faithfully preserves routes, PRNG, timers
+  ---
+  duration_ms: 0.628011
+  type: 'test'
+  ...
+# Subtest: restored simulation continues identically
+ok 19 - restored simulation continues identically
+  ---
+  duration_ms: 0.198496
+  type: 'test'
+  ...
+# Subtest: corrupt save rejected
+ok 20 - corrupt save rejected
+  ---
+  duration_ms: 0.283137
+  type: 'test'
+  ...
+# Subtest: unsupported save version rejected
+ok 21 - unsupported save version rejected
+  ---
+  duration_ms: 0.178158
+  type: 'test'
+  ...
+# Subtest: three incidents end game
+ok 22 - three incidents end game
+  ---
+  duration_ms: 0.135717
+  type: 'test'
+  ...
+# Subtest: heavy and light have different speeds
+ok 23 - heavy and light have different speeds
+  ---
+  duration_ms: 0.138482
+  type: 'test'
+  ...
+# Subtest: unknown plane and empty route are handled
+ok 24 - unknown plane and empty route are handled
+  ---
+  duration_ms: 0.091934
+  type: 'test'
+  ...
+# Subtest: spawn advances persistent RNG state
+ok 25 - spawn advances persistent RNG state
+  ---
+  duration_ms: 1.715413
+  type: 'test'
+  ...
+# Subtest: two separate collision pairs count two incidents and four losses
+ok 26 - two separate collision pairs count two incidents and four losses
+  ---
+  duration_ms: 1.164628
+  type: 'test'
+  ...
+# Subtest: three colliding aircraft count each lost aircraft once
+ok 27 - three colliding aircraft count each lost aircraft once
+  ---
+  duration_ms: 0.330086
+  type: 'test'
+  ...
+# Subtest: save rejects negative runway busy
+ok 28 - save rejects negative runway busy
+  ---
+  duration_ms: 0.736407
+  type: 'test'
+  ...
+# Subtest: save rejects unknown difficulty
+ok 29 - save rejects unknown difficulty
+  ---
+  duration_ms: 0.220749
+  type: 'test'
+  ...
+# Subtest: save rejects duplicate aircraft ids
+ok 30 - save rejects duplicate aircraft ids
+  ---
+  duration_ms: 0.311381
+  type: 'test'
+  ...
+# Subtest: save rejects unbounded plane arrays
+ok 31 - save rejects unbounded plane arrays
+  ---
+  duration_ms: 1.475177
+  type: 'test'
+  ...
+# Subtest: save rejects unsafe prototype keys
+ok 32 - save rejects unsafe prototype keys
+  ---
+  duration_ms: 0.196432
+  type: 'test'
+  ...
+1..32
+# tests 32
+# suites 0
+# pass 32
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 69.123031

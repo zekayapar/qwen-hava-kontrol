@@ -1,0 +1,25 @@
+{
+  "round": "05-controller",
+  "started_at_utc": "2026-10-12T22:48:24.431775+00:00",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 4881,
+    "total_tokens": 10579,
+    "completion_tokens": 5698,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "ttft_ms": 1659.3898420001096,
+  "total_s": 35.300636910999856,
+  "generation_window_s": 33.641142600999956,
+  "e2e_tokens_per_s": 161.41351824234295,
+  "decode_tokens_per_s": 169.34621001340963,
+  "response_sha256": "a64b0a4b48198b18b8472e50aa8b59fbc9c193105664b22a81f7505c0b2b5904",
+  "temperature": 0.2,
+  "seed": 42,
+  "thinking": false,
+  "max_tokens": 8192,
+  "endpoint_scope": "localhost vLLM, production TP2/MTP3; no gateway/HTTPS",
+  "content_chunks": 1563
+}

@@ -1,0 +1,174 @@
+TAP version 13
+# Subtest: same seed gives reproducible state
+ok 1 - same seed gives reproducible state
+  ---
+  duration_ms: 1.704542
+  type: 'test'
+  ...
+# Subtest: route rejects invalid points without changing state
+ok 2 - route rejects invalid points without changing state
+  ---
+  duration_ms: 0.397654
+  type: 'test'
+  ...
+# Subtest: route clamps coordinates and copies input
+ok 3 - route clamps coordinates and copies input
+  ---
+  duration_ms: 0.180261
+  type: 'test'
+  ...
+# Subtest: paused tick freezes all state
+ok 4 - paused tick freezes all state
+  ---
+  duration_ms: 0.492845
+  type: 'test'
+  ...
+# Subtest: ended tick freezes all state
+ok 5 - ended tick freezes all state
+  ---
+  duration_ms: 0.146668
+  type: 'test'
+  ...
+# Subtest: invalid dt does not mutate
+ok 6 - invalid dt does not mutate
+  ---
+  duration_ms: 0.143953
+  type: 'test'
+  ...
+# Subtest: tick caps large dt to 0.1 seconds
+ok 7 - tick caps large dt to 0.1 seconds
+  ---
+  duration_ms: 0.177757
+  type: 'test'
+  ...
+# Subtest: fuel drains only while playing
+ok 8 - fuel drains only while playing
+  ---
+  duration_ms: 0.174301
+  type: 'test'
+  ...
+# Subtest: zero fuel loses plane exactly once
+ok 9 - zero fuel loses plane exactly once
+  ---
+  duration_ms: 0.3427
+  type: 'test'
+  ...
+# Subtest: waypoint flight moves and consumes reached waypoint
+not ok 10 - waypoint flight moves and consumes reached waypoint
+  ---
+  duration_ms: 15.897686
+  type: 'test'
+  location: '/home/zeka/ai/projects/qwen-hava-kontrol/tools/engine.test.mjs:14:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(p.x>100)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///home/zeka/ai/projects/qwen-hava-kontrol/tools/engine.test.mjs:14:157)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: close pair emits separation warning
+ok 11 - close pair emits separation warning
+  ---
+  duration_ms: 0.415458
+  type: 'test'
+  ...
+# Subtest: collision removes both and records one incident
+ok 12 - collision removes both and records one incident
+  ---
+  duration_ms: 0.183648
+  type: 'test'
+  ...
+# Subtest: light aligned to runway can land and occupy it
+ok 13 - light aligned to runway can land and occupy it
+  ---
+  duration_ms: 0.187936
+  type: 'test'
+  ...
+# Subtest: busy runway cannot land another plane
+ok 14 - busy runway cannot land another plane
+  ---
+  duration_ms: 0.122452
+  type: 'test'
+  ...
+# Subtest: closed runway cannot land
+ok 15 - closed runway cannot land
+  ---
+  duration_ms: 0.133834
+  type: 'test'
+  ...
+# Subtest: wrong heading cannot land
+ok 16 - wrong heading cannot land
+  ---
+  duration_ms: 0.113335
+  type: 'test'
+  ...
+# Subtest: runway timer releases occupancy
+ok 17 - runway timer releases occupancy
+  ---
+  duration_ms: 0.084791
+  type: 'test'
+  ...
+# Subtest: save/load faithfully preserves routes, PRNG, timers
+ok 18 - save/load faithfully preserves routes, PRNG, timers
+  ---
+  duration_ms: 0.349342
+  type: 'test'
+  ...
+# Subtest: restored simulation continues identically
+ok 19 - restored simulation continues identically
+  ---
+  duration_ms: 0.143011
+  type: 'test'
+  ...
+# Subtest: corrupt save rejected
+ok 20 - corrupt save rejected
+  ---
+  duration_ms: 0.212042
+  type: 'test'
+  ...
+# Subtest: unsupported save version rejected
+ok 21 - unsupported save version rejected
+  ---
+  duration_ms: 0.13179
+  type: 'test'
+  ...
+# Subtest: three incidents end game
+ok 22 - three incidents end game
+  ---
+  duration_ms: 0.097836
+  type: 'test'
+  ...
+# Subtest: heavy and light have different speeds
+ok 23 - heavy and light have different speeds
+  ---
+  duration_ms: 0.108326
+  type: 'test'
+  ...
+# Subtest: unknown plane and empty route are handled
+ok 24 - unknown plane and empty route are handled
+  ---
+  duration_ms: 0.084911
+  type: 'test'
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 23
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 85.931433

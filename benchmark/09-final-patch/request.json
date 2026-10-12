@@ -1,0 +1,23 @@
+{
+  "model": "Qwen/Qwen3.8-27B",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Kesin metin değişiklikleri JSONüret."
+    },
+    {
+      "role": "user",
+      "content": "43kontrol41geçti. İkigerçekhata: loadhız4kalmış; busy pistyaklaşmarotası çiziliyor. JSON{\"replacements\":[{\"old\":exact,\"new\":replacement},...]} sadece3yama üret. İlk2load/importsatırında onPointerCancel({pointerId:drag?.pointerId}) çağır,speed=1,$('speedSelect').value='1',stage.game-activeclassadd;diğerstatekoru. Sonpistseçiminde busy<=0 şartıekle, sadeceuygunboşpistbulunsun. Özgün3old aşağıdaJSONliste; oldlarbytebyteaynıolsun. Yalnız3JSONyama, açıklamayok.\n[\"    g = s; sel = null; last = 0; uiAcc = 0;\\n    if (g.over)\", \"      g = s; sel = null; last = 0; uiAcc = 0;\\n      if (g.over)\", \"  const rw = g.runways.find(r => r.accepts.includes(p.type) && !r.closed);\"]"
+    }
+  ],
+  "max_tokens": 2048,
+  "temperature": 0.2,
+  "seed": 42,
+  "stream": true,
+  "stream_options": {
+    "include_usage": true
+  },
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  }
+}

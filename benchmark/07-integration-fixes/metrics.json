@@ -1,0 +1,25 @@
+{
+  "round": "07-integration-fixes",
+  "started_at_utc": "2026-10-12T22:50:28.754197+00:00",
+  "finish_reason": "length",
+  "usage": {
+    "prompt_tokens": 9874,
+    "total_tokens": 13970,
+    "completion_tokens": 4096,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "ttft_ms": 3572.580336000101,
+  "total_s": 26.010996558999977,
+  "generation_window_s": 22.43830679599978,
+  "e2e_tokens_per_s": 157.4718596693965,
+  "decode_tokens_per_s": 182.50040153341882,
+  "response_sha256": "116f8a2cc2bcdcba0b52400f2e3155746c38beefe9e62f896e0a5becc6e0dd80",
+  "temperature": 0.2,
+  "seed": 42,
+  "thinking": false,
+  "max_tokens": 4096,
+  "endpoint_scope": "localhost vLLM, production TP2/MTP3; no gateway/HTTPS",
+  "content_chunks": 1039
+}

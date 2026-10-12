@@ -1,0 +1,23 @@
+{
+  "model": "Qwen/Qwen3.8-27B",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Tek kesin JSONold/newyama üret."
+    },
+    {
+      "role": "user",
+      "content": "Yeni tarayıcıtesti yakaladı:loop herframehızı1e döndürüpdragıtemizliyor. Bu benim önceki promptta yanlışbloğu da yamaya dahil etmemden kaynaklandı;cleanupyükleme/importlarda kalacak. Yalnızaşağıdaki loopblocundaki onPointerCancel+speed1+classadd SATIRINI kaldır. UIrateupdate ve if(g.over) oynatsonuç korunacak. TekJSON{\"old\":\"exactblock\",\"new\":\"blockwithoutonlythatline\"}; başkaedit yok.\n    if (uiAcc >= 0.25) { uiAcc = 0; updateUI(); }\n    onPointerCancel({pointerId:drag?.pointerId}); speed = 1; $('speedSelect').value = '1'; document.querySelector('.stage').classList.add('game-active');\n    if (g.over) { playing = false; showEnd(); }"
+    }
+  ],
+  "max_tokens": 1024,
+  "temperature": 0.2,
+  "seed": 42,
+  "stream": true,
+  "stream_options": {
+    "include_usage": true
+  },
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  }
+}

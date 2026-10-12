@@ -1,0 +1,25 @@
+{
+  "round": "01-engine",
+  "started_at_utc": "2026-10-12T22:45:08.407417+00:00",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1005,
+    "total_tokens": 5828,
+    "completion_tokens": 4823,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "ttft_ms": 345.30654200034405,
+  "total_s": 27.546419743000115,
+  "generation_window_s": 27.20099352399984,
+  "e2e_tokens_per_s": 175.08627418725018,
+  "decode_tokens_per_s": 177.27293658393313,
+  "response_sha256": "9910f735c6af730c9040d66569aa29b2f5b6b68628b1567b23102ac3e5dcb52a",
+  "temperature": 0.2,
+  "seed": 42,
+  "thinking": false,
+  "max_tokens": 8192,
+  "endpoint_scope": "localhost vLLM, production TP2/MTP3; no gateway/HTTPS",
+  "content_chunks": 1268
+}

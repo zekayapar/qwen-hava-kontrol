@@ -1,0 +1,186 @@
+```html
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>ZEKA KULE — Hava Trafik Kontrol</title>
+<style>
+:root{
+  --bg:#06131a; --bg2:#0a1e27; --panel:#0c2530; --panel2:#0f2c39;
+  --line:#1c4a58; --line2:#2a6b7d; --ink:#d7f0f4; --dim:#7fa6b0;
+  --cyan:#37e0e8; --amber:#ffb020; --coral:#ff5a4d; --green:#5fe08a;
+  --glow:0 0 10px rgba(55,224,232,.5);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{
+  font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
+  background:radial-gradient(120% 120% at 50% -10%,#0d2a34 0%,var(--bg) 55%,#040d12 100%);
+  color:var(--ink);overflow-x:hidden;-webkit-text-size-adjust:100%;
+}
+h1,h2,h3{font-weight:700;letter-spacing:.02em}
+button,select,input{font-family:inherit;font-size:13px;color:var(--ink)}
+button{cursor:pointer;background:var(--panel2);border:1px solid var(--line);
+  border-radius:6px;padding:6px 10px;transition:transform .12s,border-color .12s,box-shadow .12s}
+button:hover{border-color:var(--cyan);box-shadow:var(--glow);transform:translateY(-1px)}
+button:active{transform:translateY(0)}
+button:disabled{opacity:.4;cursor:not-allowed;box-shadow:none;transform:none}
+select,input{background:#081a21;border:1px solid var(--line);border-radius:6px;padding:5px 7px}
+input:focus,select:focus,button:focus-visible{outline:2px solid var(--cyan);outline-offset:1px}
+.wrap{max-width:1320px;margin:0 auto;padding:10px}
+/* header */
+header{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:8px 12px;
+  background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);
+  border-radius:10px;margin-bottom:10px}
+.brand{display:flex;align-items:baseline;gap:8px;margin-right:auto}
+.brand h1{font-size:20px;color:var(--cyan);text-shadow:var(--glow)}
+.brand small{color:var(--dim);font-size:11px}
+.controls{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.controls label{display:flex;align-items:center;gap:4px;color:var(--dim);font-size:11px}
+.controls input{width:74px}
+/* layout */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:10px}
+.stage{position:relative;border:1px solid var(--line);border-radius:10px;overflow:hidden;
+  background:#04121a;box-shadow:inset 0 0 40px rgba(0,0,0,.6)}
+#radar{display:block;width:100%;height:auto;aspect-ratio:1000/700;touch-action:none;
+  background:radial-gradient(circle at 50% 50%,#0a222c 0%,#05141b 70%,#030e14 100%)}
+/* overlays */
+.overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  background:rgba(4,14,20,.82);backdrop-filter:blur(2px);padding:18px;z-index:5}
+.card{max-width:440px;width:100%;background:var(--panel);border:1px solid var(--line2);
+  border-radius:12px;padding:20px;box-shadow:0 0 30px rgba(55,224,232,.15)}
+.card h2{color:var(--cyan);font-size:22px;margin-bottom:12px;text-shadow:var(--glow)}
+.steps{list-style:none;counter-reset:s;margin:0 0 14px}
+.steps li{counter-increment:s;position:relative;padding:8px 0 8px 34px;color:var(--ink);
+  font-size:14px;border-bottom:1px dashed var(--line)}
+.steps li::before{content:counter(s);position:absolute;left:0;top:6px;width:24px;height:24px;
+  display:grid;place-items:center;background:var(--cyan);color:#04121a;border-radius:50%;
+  font-weight:700;font-size:13px}
+.note{font-size:12px;color:var(--dim);margin-bottom:14px;line-height:1.5}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.row button{flex:1;min-width:120px;padding:10px;font-size:14px;font-weight:600}
+#startBtn{background:var(--cyan);color:#04121a;border-color:var(--cyan)}
+#endSummary{font-size:14px;line-height:1.6;margin-bottom:14px}
+/* right panel */
+aside{display:flex;flex-direction:column;gap:10px;min-width:0}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.box h3{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--dim);
+  margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
+#stats{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.stat{background:#081a21;border:1px solid var(--line);border-radius:6px;padding:6px 8px}
+.stat b{display:block;font-size:18px;color:var(--cyan);line-height:1.1}
+.stat span{font-size:10px;color:var(--dim)}
+#weather{font-size:13px;color:var(--ink)}
+#runways,#planes,#warnings,#events{list-style:none;max-height:150px;overflow:auto}
+#runways li,#planes li,#warnings li,#events li{font-size:12px;padding:5px 6px;
+  border-radius:5px;margin-bottom:4px;background:#081a21;border:1px solid var(--line)}
+#planes li{cursor:pointer;display:flex;justify-content:space-between;gap:6px}
+#planes li:hover{border-color:var(--cyan)}
+#planes li.sel{border-color:var(--cyan);box-shadow:var(--glow)}
+#selected{font-size:12px;line-height:1.6}
+#selected .k{color:var(--dim)}
+#warnings li{border-left:3px solid var(--amber)}
+#warnings li.bad{border-left-color:var(--coral);color:#ffd9d5}
+#events li{color:var(--dim)}
+#status{font-size:12px;color:var(--green);min-height:16px}
+#status.err{color:var(--coral)}
+.legend{display:flex;gap:10px;flex-wrap:wrap;font-size:11px;color:var(--dim)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px;vertical-align:-1px}
+/* help */
+.help{margin-top:10px;font-size:11px;color:var(--dim);text-align:center;line-height:1.6}
+kbd{background:#081a21;border:1px solid var(--line);border-radius:4px;padding:1px 5px;
+  font-family:inherit;font-size:11px;color:var(--cyan)}
+@media (max-width:760px){
+  .layout{grid-template-columns:1fr}
+  #radar{aspect-ratio:auto;height:300px}
+  .brand h1{font-size:17px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><h1>ZEKA KULE</h1><small>hava trafik kontrol</small></div>
+    <div class="controls">
+      <button id="pauseBtn" aria-label="Duraklat">⏸ Duraklat</button>
+      <button id="restartBtn" aria-label="Yeniden başlat">↻ Yeniden</button>
+      <button id="saveBtn" aria-label="Kaydet">💾 Kaydet</button>
+      <button id="loadBtn" aria-label="Yükle">📂 Yükle</button>
+      <button id="exportBtn" aria-label="Dışa aktar">⬇ Dışa</button>
+      <button id="importBtn" aria-label="İçe aktar">⬆ İçe</button>
+      <label>Hız <select id="speedSelect"><option value="1">1</option><option value="2">2</option><option value="4">4</option></select></label>
+      <label>Seed <input id="seedInput" type="number" value="42" min="0" max="4294967295"></label>
+      <label>Zorluk <select id="difficulty"><option value="normal">Normal</option><option value="zor">Zor</option></select></label>
+    </div>
+  </header>
+
+  <div class="layout">
+    <div class="stage">
+      <canvas id="radar" width="1000" height="700" role="img" tabindex="0"
+        aria-label="Radar ekranı: uçaklar, pistler ve yaklaşma okları"></canvas>
+
+      <div id="startOverlay" class="overlay">
+        <div class="card">
+          <h2>ZEKA KULE</h2>
+          <ol class="steps">
+            <li>Uçağı seç →</li>
+            <li>rotayı çiz →</li>
+            <li>pistin yaklaşma oku yönünde indir</li>
+          </ol>
+          <p class="note">Yakıt bitmeden ve uyarılar kırmızı olmadan uçakları pistlere indir. 3 olayda oyun biter.</p>
+          <div class="row">
+            <button id="startBtn">Başla</button>
+            <button id="startLoadBtn">Kaydı yükle</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="endOverlay" class="overlay" hidden>
+        <div class="card">
+          <h2>Oyun Bitti</h2>
+          <div id="endSummary"></div>
+          <div class="row"><button id="againBtn">Yeniden oyna</button></div>
+        </div>
+      </div>
+    </div>
+
+    <aside>
+      <div class="box"><h3>Canlı Özet</h3><div id="stats"></div></div>
+      <div class="box"><h3>Hava</h3><div id="weather"></div></div>
+      <div class="box"><h3>Pistler</h3><ul id="runways"></ul></div>
+      <div class="box"><h3>Uçaklar</h3><ul id="planes"></ul></div>
+      <div class="box"><h3>Seçili Uçak</h3><div id="selected"><span class="k">Uçak seçilmedi.</span></div></div>
+      <div class="box"><h3>Yakınlık Uyarıları</h3><ul id="warnings"></ul></div>
+      <div class="box"><h3>Son Olaylar</h3><ul id="events"></ul></div>
+      <div class="box"><h3>Durum</h3><div id="status" role="status" aria-live="polite"></div></div>
+      <div class="box"><h3>Lejant</h3>
+        <div class="legend">
+          <span><i style="background:var(--green)"></i>Normal</span>
+          <span><i style="background:var(--amber)"></i>Yakın</span>
+          <span><i style="background:var(--coral)"></i>Tehlike</span>
+        </div>
+      </div>
+      <div class="box"><h3>Yaklaşma</h3>
+        <div class="row">
+          <button id="clearRouteBtn" disabled>Rotayı temizle</button>
+          <button id="approachBtn" disabled>Yaklaş</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <p class="help">
+    <kbd>P</kbd> duraklat · <kbd>R</kbd> yeniden · <kbd>1</kbd>/<kbd>2</kbd>/<kbd>4</kbd> hız ·
+    <kbd>Esc</kbd> rotayı temizle · <kbd>Enter</kbd> yaklaş · 3 olayda oyun biter
+  </p>
+</div>
+<input id="fileInput" type="file" accept=".json" hidden>
+<script type="module" src="./app.js"></script>
+</body>
+</html>
+```

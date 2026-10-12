@@ -1,0 +1,11 @@
+from generate import run,ROOT
+p='''"zeka kule" Türkçe hava trafik kontrol oyunu için yalnız index.html (HTML+CSS) üret; JavaScript controller ayrı app.js olacak, enson <script type="module" src="./app.js"></script>. Tekhtmlblokta tamamdosya; maksimum180satır sıkıkompakt yaz. ÖncekitamoyunUIisteği8192tokendaJSbaşlangıcında kesildi; buda başarısızolarakkaydedildi, şimdi modüllerebölüyoruz. Hariciasset/CDN/font/dependency yok, inlineCSS.
+Koyu petrol+radar hava trafik kontrol paneli,başlık ZEKA KULE küçük çalışmaoyunu,yumuşaksınırlar/cyanamber türler. Desktop solgeniş1000×700canvas sağ300pxpanel; mobile390pxte tek sütun. Canvasresponsive veasa1000×700 logical;aria roleimg label ve tabindex0; touchactionnoneyalnızcanvas. Browserzoom yasaklama; viewport widthdevice initial1. Başlık barı kısa turbutonları, stats, radar+rightpanel, altta tinyhelp.
+KesinDOMidleri:
+canvas#radar; #stats canlıözet; #weather; #runways piststatlistesi; #planes uçak seçmeliste; #selected seçiliuçakinfo; #warnings yakınlık; #events sonolaylar; #status role=status aria-live polite errorfeedback.
+header buttons #pauseBtn,#restartBtn,#saveBtn,#loadBtn,#exportBtn,#importBtn; select#speedSelect 1/2/4; input#seedInput type=number default42min0max4294967295,label; select#difficulty normal/zor,label. #clearRouteBtn ve #approachBtn (başlangıçdisabled).
+input#fileInput hidden typefile accept.json.
+#startOverlay overlayradarüstü yalnızoverlaybaşlangıçgörünür; h2 ve3adımnettalimat "Uçağı seç → rotayı çiz → pistin yaklaşma oku yönünde indir", fuel/uyarıları göster, button#startBtn Başla; #startLoadBtn Kaydı yükle.
+#endOverlay başlangıçhiddenattribute; #endSummary; #againBtn Yeniden oyna.
+KlavyeP,rotaçiz veörnekyaklaşmakullanımı,3olayoyunbiter kısayönerge. HUDpist durumları/uyarılarlistesi UIcontroller tarafından doldurulacak. Colorslightgreen mediumamberheavycorallegenda veikon ayırt. Menübutonlarwrap, nohorizontaloverflow. [hidden]{display:none!important}. reducedmotion CSSanimasyon yok. Canvaswidth100% maxheightviewportrelative ama oran1000/700, mobildeboy300pxuygun. Rightpanelneonglowabartma. Oyuncuya modelbenchmarkrapormetni koyma, gerçekoyunUI. Codecompletions4000token bütçeyi aşma. YalnızHTMLshell; controllerJS yazma.'''
+run('04-layout','Tam HTML/CSS dosyasını tek html kodbloğunda üret. Oyun geliştiricisisin.',p,4096,True)

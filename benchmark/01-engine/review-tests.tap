@@ -1,0 +1,182 @@
+TAP version 13
+# Subtest: spawn advances persistent RNG state
+not ok 1 - spawn advances persistent RNG state
+  ---
+  duration_ms: 1.49745
+  type: 'test'
+  location: '/home/zeka/ai/projects/qwen-hava-kontrol/tools/review.test.mjs:2:1'
+  failureType: 'testCodeFailure'
+  error: 'Expected "actual" to be strictly unequal to: 42'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 42
+  actual: 42
+  operator: 'notStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///home/zeka/ai/projects/qwen-hava-kontrol/tools/review.test.mjs:2:129)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: two separate collision pairs count two incidents and four losses
+not ok 2 - two separate collision pairs count two incidents and four losses
+  ---
+  duration_ms: 0.993754
+  type: 'test'
+  location: '/home/zeka/ai/projects/qwen-hava-kontrol/tools/review.test.mjs:3:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    1 !== 2
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 2
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///home/zeka/ai/projects/qwen-hava-kontrol/tools/review.test.mjs:3:172)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: three colliding aircraft count each lost aircraft once
+not ok 3 - three colliding aircraft count each lost aircraft once
+  ---
+  duration_ms: 0.264742
+  type: 'test'
+  location: '/home/zeka/ai/projects/qwen-hava-kontrol/tools/review.test.mjs:4:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    2 !== 3
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 3
+  actual: 2
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///home/zeka/ai/projects/qwen-hava-kontrol/tools/review.test.mjs:4:158)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: save rejects negative runway busy
+not ok 4 - save rejects negative runway busy
+  ---
+  duration_ms: 0.474549
+  type: 'test'
+  location: '/home/zeka/ai/projects/qwen-hava-kontrol/tools/review.test.mjs:5:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected exception.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (file:///home/zeka/ai/projects/qwen-hava-kontrol/tools/review.test.mjs:5:96)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: save rejects unknown difficulty
+not ok 5 - save rejects unknown difficulty
+  ---
+  duration_ms: 0.17394
+  type: 'test'
+  location: '/home/zeka/ai/projects/qwen-hava-kontrol/tools/review.test.mjs:6:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected exception.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (file:///home/zeka/ai/projects/qwen-hava-kontrol/tools/review.test.mjs:6:96)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: save rejects duplicate aircraft ids
+not ok 6 - save rejects duplicate aircraft ids
+  ---
+  duration_ms: 0.186243
+  type: 'test'
+  location: '/home/zeka/ai/projects/qwen-hava-kontrol/tools/review.test.mjs:7:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected exception.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (file:///home/zeka/ai/projects/qwen-hava-kontrol/tools/review.test.mjs:7:159)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: save rejects unbounded plane arrays
+not ok 7 - save rejects unbounded plane arrays
+  ---
+  duration_ms: 0.655884
+  type: 'test'
+  location: '/home/zeka/ai/projects/qwen-hava-kontrol/tools/review.test.mjs:8:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected exception.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (file:///home/zeka/ai/projects/qwen-hava-kontrol/tools/review.test.mjs:8:125)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: save rejects unsafe prototype keys
+not ok 8 - save rejects unsafe prototype keys
+  ---
+  duration_ms: 0.178799
+  type: 'test'
+  location: '/home/zeka/ai/projects/qwen-hava-kontrol/tools/review.test.mjs:9:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected exception.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (file:///home/zeka/ai/projects/qwen-hava-kontrol/tools/review.test.mjs:9:152)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 0
+# fail 8
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 55.615709
