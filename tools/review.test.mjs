@@ -1,0 +1,9 @@
+import test from 'node:test';import assert from 'node:assert/strict';import{createGame,addPlane,tick,serialize,deserialize}from'../engine.js';
+test('spawn advances persistent RNG state',()=>{const g=createGame(42);g.spawnTimer=0;const before=g.rngState;tick(g,.1);assert.notEqual(g.rngState,before)});
+test('two separate collision pairs count two incidents and four losses',()=>{const g=createGame();for(const x of[100,101,700,701])addPlane(g,{x,y:100});tick(g,.01);assert.equal(g.incidents,2);assert.equal(g.lost,4)});
+test('three colliding aircraft count each lost aircraft once',()=>{const g=createGame();for(const x of[100,101,102])addPlane(g,{x,y:100});tick(g,.01);assert.equal(g.lost,3)});
+test('save rejects negative runway busy',()=>{const g=createGame();g.runways[0].busy=-1;assert.throws(()=>deserialize(serialize(g)))});
+test('save rejects unknown difficulty',()=>{const g=createGame();g.difficulty='invalid';assert.throws(()=>deserialize(serialize(g)))});
+test('save rejects duplicate aircraft ids',()=>{const g=createGame();addPlane(g,{x:100,y:100});addPlane(g,{x:500,y:100});g.planes[1].id=g.planes[0].id;assert.throws(()=>deserialize(serialize(g)))});
+test('save rejects unbounded plane arrays',()=>{const g=createGame();for(let i=0;i<201;i++)addPlane(g,{x:100,y:100});assert.throws(()=>deserialize(serialize(g)))});
+test('save rejects unsafe prototype keys',()=>{const g=createGame();const text=serialize(g).replace('"version":1','"__proto__":{},"version":1');assert.throws(()=>deserialize(text))});

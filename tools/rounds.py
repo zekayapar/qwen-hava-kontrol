@@ -1,0 +1,19 @@
+from generate import run,ROOT
+import json,re,sys
+SYSTEM='Sen deneyimli oyun geliştiricisisin. İstenen JavaScript ES module dosyasını tek javascript kod bloğunda üret. Harici bağımlılık yok. Eksiksiz çalışan kod üret; açıklama yok.'
+ENGINE='''Detaylı Türkçe hava trafik kontrol oyunu "zeka kule" için yalnız engine.js simülasyon modülünü yaz. UI sonraki ayrı istekte yazılacak. Tarayıcı ve Node'da çalışan DOM'suz deterministik saf veri simülasyonu. Tüm exportlar: createGame(seed=42,difficulty='normal'), addPlane(g,options), setRoute(g,id,points), tick(g,dt), serialize(g), deserialize(text).
+Sözleşme:
+- Mantıksal alan1000×700. Oyun plain JSON data; g.version=1,time=0,paused=false,over=false,planes=[],runways,score=0,landed=0,lost=0,incidents=0,warnings=[],events=[],seed RNGstate,spawnTimer,weather. Date/Math.random/global değişken yok. Seedli PRNG bütün state'de tutulur. Normal/zor seçeneği; artan trafik; hava durumu rüzgar/fırtına değişimi; fırtınada pist geçici kapanışı.
+- runways iki pist: her biri id,name,x,y,heading(radyan),accepts(type listesi),busy(saniye),closed(boolean),closeTimer. Bir pist light+medium diğer medium+heavy kabul eder. Tür hızları farklı; fuel türe göre.
+- addPlane(g,{type='light',x,y,heading=0,fuel=120}) düz plain object p döndürür ve g.planes'e ekler. p.id benzersiz,p.type,x,y,heading,speed,fuel,route=[]; idcounter state. Geçersiz tür/koordinat hata, fuel=0 geçerli.
+- setRoute: bulunamazsa/geçersiz array/NaN nokta false, mutasyon yok. En fazla100nokta; x0..1000,y0..700 clamp; deep copy; boşarray rotayı siler,true. Noktalar{x,y}.
+- tick: paused/over/NaN/negative dt hiçbir mutasyon yok;0dtnoop; diğer dt en fazla0.1. time, yakıt, pistbusy/closedtimer; sıradaki waypoint yönünde hareket ve headingayarı; nokta varış mesafesindeki waypoint tüketilir, fazla hareket sonrakinoktaya geçer. Rotası yoksa headingdoğrultusunda uçuş. Alan dışına çıkar veya fuelbiterse birdefa lost++,scoreazalır,event; removed plane tekrar sayılmaz.
+- Oyuncunun rotasını uygun piste götürmesi gerekir. Uçak pist merkezine18mesafealtında, doğru tür, headingfarkı<0.35radyan,busy0,closedfalse ise land: removed,landed++,scoreödül,busy=3sn. Heading ters olan, busy veya kapalı pistte iniş yok. Rotaşartsız konumu ve yönü doğru p iniş yapabilir. Aynıtickikiuçak aynıpisti alamaz.
+- Mesafe<35 separationwarning, <12 collision. Çarpışma yalnızbirincident (pair),herikiuçakremoved,lost+2, scoreazalır; multiuçak duplicate sayılmaz. Üçincident g.over=true. Collision detection landingden önce yapılır. warnings günceltick plain data çiftid/konum listesi. Eventlog Türkçemetin,time,type, son50kayıt.
+- spawn: ilkspawnTimer=5sn, kenardan yeniuçaklar, uçaklar arası başlangıç mesafesine dikkat; traffic difficulty+time artar. Weather ilkde sakin ve ilk60sn otomatikdeğişme yok. UI g.weather içeriğini gösterebilecek.
+- serialize JSON.stringify. deserialize yalnızversion1 geçerli şema, finite numbers, arraylimitler, known types,runways/stateRNG; yanlış JSON veya bozukkayıt throw Error(Türkçe); state tam geri dönmeli,save sonrası aynıtickaynısonuç. Kullanıcı JSON prototype pollution olmasın. İstekten ayrı 24 kabul testi yazıldı; test hooks/tatmin için özel koşul koyma. Kod gerçekten kuralları sağlasın.
+Eksiksiz engine.js tek kod bloğu, yaklaşık300satır altında tut ama doğrulama ve mekaniği çıkarma.'''
+if __name__=='__main__':
+ r=run('01-engine',SYSTEM,ENGINE,8192,False)
+ ans=(ROOT/'benchmark/01-engine/response.md').read_text();code=re.search(r'```(?:javascript|js)\s*\n(.*?)```',ans,re.S).group(1)
+ (ROOT/'engine.js').write_text(code)
